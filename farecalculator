@@ -1,0 +1,62 @@
+/*At the start of the year 2023 the cost of oil in the international market is predicted to increase to
+close and as a result, the cost of travel fare for different modes of transport will be revised as
+follows:
+Bus fare 12% increase for distance over 151km AND Taxi 15% increase for distance over
+1500km.
+Write a program in C language that will allow user to check the current transport fare for both
+bus and tax. It should provide user with a menu for selecting either Bus or Taxi then prompt the
+user to enter distance he/she wishes to travel. The program should calculate and output the new
+revised travel fare for the journey from the old fare shown in the table. Use both switch and
+if..elseif decision structures.
+*/
+
+
+
+#include <stdio.h>
+int main()
+{
+    int choice;
+    int distance;
+    float fare;
+
+    printf("Please select a mode of transport\n 1. Bus\n 2. Taxi\n");
+    scanf("%d",&choice);
+
+    if (choice == 1) 
+    {
+        printf("Please enter the distance you wish to travel in km\n");
+        scanf("%d",&distance);
+
+        if (distance < 50)
+            fare = 100;
+        else if (distance >= 51 && distance <= 150)
+            fare = 250;
+        else if (distance >= 151 && distance <= 400)
+            fare = 1500;
+        else 
+            fare = 2500;
+
+        fare = fare * 1.12;
+
+        printf("The revised fare for the journey is %f\n", fare);
+    }
+
+    else if (choice == 2)
+    {
+        printf("Please enter the distance you wish to travel in km\n");
+        scanf("%d",&distance);
+
+        if (distance < 50)
+            fare = 1000;
+        else if (distance >= 51 && distance <= 150)
+            fare = 1500;
+        else if (distance >= 151 && distance <= 400)
+            fare = 4000;
+        else 
+            fare = 7000;
+
+        fare = fare * 1.15;
+
+        printf("The revised fare for the journey is %f\n", fare);
+    }
+}
